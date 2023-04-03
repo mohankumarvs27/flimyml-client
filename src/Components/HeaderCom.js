@@ -1,7 +1,7 @@
 import React from "react";
 import { IoNotifications } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
-import { HiMenuAlt1 } from "react-icons/hi";
+//import { HiMenuAlt1 } from "react-icons/hi";
 
 import PoppupComProfile from "../Components/PoppupComProfile";
 

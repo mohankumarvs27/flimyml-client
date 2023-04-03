@@ -11,7 +11,7 @@ function LoginCom() {
   const loginFun = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/user/checkuser",
+        "https://movierecommendation-backend.vercel.app/api/user/checkuser",
         {
           email: email,
           password: password,

@@ -23,7 +23,11 @@ export default function PoppupComProfile() {
       <Menu as="div" className="relative inline-block">
         <div>
           <Menu.Button className="">
-            <img className="h-10 w-10 rounded-full" src={value[1]} />
+            <img
+              className="h-10 w-10 rounded-full"
+              src={value[1]}
+              alt="profile_pic"
+            />
           </Menu.Button>
         </div>
         <Transition>

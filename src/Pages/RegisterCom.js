@@ -14,7 +14,7 @@ function RegisterCom() {
   const registerFun = async () => {
     try {
       const { data } = await axios.post(
-        "http://localhost:8080/api/user/createuser",
+        "https://movierecommendation-backend.vercel.app/api/user/createuser",
         {
           userName: name,
           email: email,
