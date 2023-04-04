@@ -19,7 +19,7 @@ export default function PoppupComProfile() {
   }, []);
 
   return (
-    <div className="pl-2 text-right">
+    <div className=" top-5 right-5">
       <Menu as="div" className="relative inline-block">
         <div>
           <Menu.Button className="">
@@ -31,11 +31,11 @@ export default function PoppupComProfile() {
           </Menu.Button>
         </div>
         <Transition>
-          <Menu.Items className="absolute right-0 tpo-1 text-left shadow-lg rounded-md  p-2 text-white bg-gray-600">
-            <div className="">
+          <Menu.Items className="absolute right-0 text-left shadow-lg rounded-md  p-2 text-white bg-gray-600">
+            <div className="hover:bg-gray-500 rounded p-2">
               <Menu.Item>
                 <button>
-                  <div className="flex items-center p-2 w-48 rounded hover:bg-gray-500 space-x-2">
+                  <div className="flex items-center space-x-2">
                     <CgProfile />
                     <p>{value[0]}</p>
                   </div>

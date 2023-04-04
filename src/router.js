@@ -4,7 +4,8 @@ import RegisterCom from "./Pages/RegisterCom";
 import LoginCom from "./Pages/LoginCom";
 import Home from "./Pages/Home";
 import Dashboard from "./Pages/Dashboard";
-import PoppupComProfile from "./Components/PoppupComProfile";
+//import PoppupComProfile from "./Components/PoppupComProfile";
+import MobileNavbar from "./Components/MobileNavbar";
 
 function RouterCom() {
   return (
@@ -14,7 +15,7 @@ function RouterCom() {
         <Route path="register" element={<RegisterCom />} />
         <Route path="login" element={<LoginCom />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="poppup" element={<PoppupComProfile />} />
+        <Route path="poppup" element={<MobileNavbar />} />
       </Routes>
     </>
   );

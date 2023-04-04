@@ -3,12 +3,12 @@ import { IoNotifications } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 //import { HiMenuAlt1 } from "react-icons/hi";
 
-import PoppupComProfile from "../Components/PoppupComProfile";
+import PoppupComProfile from "./PoppupComProfile";
 
 function HeaderCom() {
   return (
     <>
-      <header className="px-3.5 bg-gray-800 py-1 sticky w-full">
+      <nav className="px-3.5 bg-gray-800 py-1 fixed w-full z-20">
         <div className="flex items-center justify-between">
           <div className="flex items-center text-white space-x-2">
             {/* <HiMenuAlt1 className="h-6 w-6 text-gray-400" /> */}
@@ -17,7 +17,9 @@ function HeaderCom() {
               alt="logo"
               className="w-10"
             />
-            <p>Movie Recommendation System</p>
+            <p className="hidden sm:inline-block">
+              Movie Recommendation System
+            </p>
           </div>
           <div className="flex items-center space-x-2">
             <div className="p-1 hidden md:inline relative">
@@ -30,12 +32,12 @@ function HeaderCom() {
             </div>
             {/* <FaSearch className="hover:bg-red-100 rounded border m-2 text-black" /> */}
           </div>
-          <div className="flex items-center">
-            <IoNotifications className="h-6 w-6" />
+          <div className="flex space-x-2 items-center">
+            <IoNotifications className="h-6 w-6 hidden md:inline-block" />
             <PoppupComProfile />
           </div>
         </div>
-      </header>
+      </nav>
     </>
   );
 }

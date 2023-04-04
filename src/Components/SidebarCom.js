@@ -33,16 +33,14 @@ function SidebarCom() {
   ];
   return (
     <>
-      <div className="h-full flex items-center shadow-md w-16 px-3 text-gray-700">
-        <ul className="group fixed flex flex-col space-y-6 pt-2">
+      <div className="w-full text-white fixed bottom-0 pb-2 md:left-0 px-4 bg-gray-700">
+        <ul className="group  flex items-center justify-between md:flex-col  pt-2 ">
           {sidebardata.map(({ icon, title }, key) => (
             <li key={key}>
               <NavLink>
                 <div className="flex items-center h-8  rounded-md hover:text-white">
-                  {icon}
-                  <span className="group-hover:inline hidden pl-2">
-                    {title}
-                  </span>
+                  <div> {icon}</div>
+                  <span className="group-hover:inline hidden">{title}</span>
                 </div>
               </NavLink>
             </li>

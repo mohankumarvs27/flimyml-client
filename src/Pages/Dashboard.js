@@ -1,14 +1,18 @@
 import React from "react";
 import CardCom from "../Components/CardCom";
 import HeaderCom from "../Components/HeaderCom";
-import SidebarCom from "../Components/SidebarCom";
+import MobileNavbar from "../Components/MobileNavbar";
+//import SidebarCom from "../Components/SidebarCom";
 
 function Dashboard() {
   return (
-    <div className="flex h-screen flex-col overflow-hidden">
-      <HeaderCom />
-      <div className="flex h-full bg-gray-900">
-        <SidebarCom />
+    <div className="flex h-screen w-full flex-col mx-auto">
+      <div>
+        <HeaderCom />
+      </div>
+      <div className="flex relative bg-gray-900">
+        {/* <SidebarCom /> */}
+        <MobileNavbar />
         <CardCom />
       </div>
     </div>
