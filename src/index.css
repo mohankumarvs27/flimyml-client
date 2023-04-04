@@ -3,21 +3,49 @@
 @tailwind utilities;
 
 body {
-    /* overflow: hidden; */
-    background: #111827;
+  /* overflow: hidden; */
+  background: #111827;
 }
 
 @layer utilities {
-    @variants responsive {
-      /* Hide scrollbar for Chrome, Safari and Opera */
-      .no-scrollbar::-webkit-scrollbar {
-          display: none;
-      }
+  @variants responsive {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
 
-      /* Hide scrollbar for IE, Edge and Firefox */
-      .no-scrollbar {
-          -ms-overflow-style: none;  /* IE and Edge */
-          scrollbar-width: none;  /* Firefox */
-      }
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .no-scrollbar {
+      -ms-overflow-style: none; /* IE and Edge */
+      scrollbar-width: none; /* Firefox */
     }
   }
+}
+
+body::-webkit-scrollbar {
+  width: none;
+}
+
+a:active,
+a:focus {
+  text-decoration: none;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+
+body::-webkit-scrollbar-thumb,
+.iti__country-list::-webkit-scrollbar-thumb {
+  background: #4e4e4e;
+  border-radius: 0 !important;
+}
+
+html::-webkit-scrollbar,
+.iti__country-list::-webkit-scrollbar {
+  display: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

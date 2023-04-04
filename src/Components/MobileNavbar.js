@@ -52,12 +52,12 @@ export default function MobileNavbar() {
         </button> */}
 
         {sidebardata.map(({ icon, title }, key) => (
-          <>
+          <React.Fragment key={key}>
             <button className="group flex flex-col justify-center rounded items-center hover:bg-gray-800 p-1">
               {icon}
               <span className="group-hover:text-blue-500">{title}</span>
             </button>
-          </>
+          </React.Fragment>
         ))}
       </div>
     </div>
