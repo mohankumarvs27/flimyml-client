@@ -42,7 +42,7 @@ function CardCom() {
   return (
     <div className="mt-16 ml-4 text-white">
       <p className="text-2xl">Popular Movies</p>
-      <div className="flex w-[95vw] overflow-x-scroll no-scrollbar">
+      <div className="flex w-[99vw] overflow-x-scroll no-scrollbar">
         {movie.map(({ id, poster_path, original_title, release_date }, key) => (
           <div key={id} className="min-w-[160px] text-gray-400 text-center m-2">
             <img
@@ -61,7 +61,7 @@ function CardCom() {
       </div>
 
       <p className="text-2xl">Similar Movies</p>
-      <div className="flex w-[95vw] overflow-x-scroll no-scrollbar">
+      <div className="flex w-[99vw] overflow-x-scroll no-scrollbar">
         {similarMovie.map(
           ({ id, poster_path, original_title, release_date }, key) => (
             <div
