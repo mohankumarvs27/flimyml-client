@@ -4,15 +4,15 @@ import DummyCom from "../Components/DummyCom";
 import HeaderCom from "../Components/HeaderCom";
 import MobileNavbar from "../Components/MobileNavbar";
 
-function Dashboard() {
+function MobileView() {
   return (
     <div>
       <HeaderCom />
       <DummyCom />
-      <CardCom />
       <MobileNavbar />
+      <CardCom />
     </div>
   );
 }
 
-export default Dashboard;
+export default MobileView;

@@ -8,7 +8,7 @@ import PoppupComProfile from "./PoppupComProfile";
 function HeaderCom() {
   return (
     <>
-      <nav className="px-3.5 bg-gray-800 py-1 fixed w-full z-20">
+      <nav className="fixed top-0 px-3.5 bg-gray-800 py-1 w-full z-20">
         <div className="flex items-center justify-between">
           <div className="flex items-center text-white space-x-2">
             {/* <HiMenuAlt1 className="h-6 w-6 text-gray-400" /> */}
