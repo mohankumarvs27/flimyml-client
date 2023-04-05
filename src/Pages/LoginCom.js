@@ -19,7 +19,7 @@ function LoginCom() {
       );
 
       data?.message === "login sucessfull"
-        ? navigate("/mobile")
+        ? navigate("/dashboard")
         : alert("login failed");
       console.log(data);
 
