@@ -7,6 +7,7 @@ import Dashboard from "./Pages/Dashboard";
 //import PoppupComProfile from "./Components/PoppupComProfile";
 import MobileNavbar from "./Components/MobileNavbar";
 import MobileView from "./Pages/MobileView";
+import MovieDetails from "./Pages/MovieDetails";
 
 function RouterCom() {
   return (
@@ -18,6 +19,7 @@ function RouterCom() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/poppup" element={<MobileNavbar />} />
         <Route path="/mobile" element={<MobileView />} />
+        <Route path="/moviedetails/:id" element={<MovieDetails />} />
       </Routes>
     </>
   );
