@@ -90,7 +90,7 @@ function CardCom() {
                   src={
                     poster_path
                       ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://www.shutterstock.com/image-vector/image-not-found-grayscale-photo-260nw-1737334631.jpg"
+                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
                   }
                   alt="hi"
                   className="rounded w-full h-[250px] object-cover"
@@ -114,7 +114,7 @@ function CardCom() {
                 src={
                   poster_path
                     ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                    : "https://www.shutterstock.com/image-vector/image-not-found-grayscale-photo-260nw-1737334631.jpg"
+                    : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
                 }
                 alt="hi"
                 className="rounded w-full h-[250px] object-cover"
@@ -139,7 +139,7 @@ function CardCom() {
                   src={
                     poster_path
                       ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://www.shutterstock.com/image-vector/image-not-found-grayscale-photo-260nw-1737334631.jpg"
+                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
                   }
                   alt={id}
                   className="rounded w-full h-[250px] object-cover "
@@ -164,7 +164,7 @@ function CardCom() {
                   src={
                     poster_path
                       ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://www.shutterstock.com/image-vector/image-not-found-grayscale-photo-260nw-1737334631.jpg"
+                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
                   }
                   alt="hi"
                   className="rounded w-full h-[250px] object-cover"
