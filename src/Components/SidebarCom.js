@@ -3,6 +3,7 @@ import { HiHome } from "react-icons/hi";
 import { BsFillCameraReelsFill, BsFillCalendar3WeekFill } from "react-icons/bs";
 import { MdOndemandVideo } from "react-icons/md";
 import { NavLink } from "react-router-dom";
+//this is sidebar
 
 function SidebarCom() {
   const sidebardata = [
