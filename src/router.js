@@ -13,11 +13,11 @@ function RouterCom() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="register" element={<RegisterCom />} />
-        <Route path="login" element={<LoginCom />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="poppup" element={<MobileNavbar />} />
-        <Route path="mobile" element={<MobileView />} />
+        <Route path="/register" element={<RegisterCom />} />
+        <Route path="/login" element={<LoginCom />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/poppup" element={<MobileNavbar />} />
+        <Route path="/mobile" element={<MobileView />} />
       </Routes>
     </>
   );
