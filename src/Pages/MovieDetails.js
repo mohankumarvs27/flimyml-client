@@ -49,8 +49,3 @@ function MovieDetailsCom() {
 }
 
 export default MovieDetailsCom;
-
-// Array.map((each)=>{
-//     each?.name,
-
-// })
