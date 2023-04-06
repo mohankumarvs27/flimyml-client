@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 
 function CardCom() {
   // const navigate = useNavigate();
+  const IMAGE_PATH = "https://www.themoviedb.org/t/p/w440_and_h660_face";
+  const NO_IMAGE =
+    "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png";
 
   const [movie, setMovie] = React.useState([]);
   const [similarMovie, setSimilarMovie] = React.useState([]);
@@ -85,12 +88,10 @@ function CardCom() {
               key={key}
               className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
             >
-              <Link to={`/moviedetails/` + id}>
+              <Link to={`/dashboard/moviedetails/` + id}>
                 <img
                   src={
-                    poster_path
-                      ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
+                    poster_path ? `${IMAGE_PATH}${poster_path}` : `${NO_IMAGE}`
                   }
                   alt="hi"
                   className="rounded w-full h-[250px] object-cover"
@@ -109,12 +110,10 @@ function CardCom() {
             key={key}
             className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
           >
-            <Link to={`/moviedetails/` + id}>
+            <Link to={`/dashboard/moviedetails/` + id}>
               <img
                 src={
-                  poster_path
-                    ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                    : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
+                  poster_path ? `${IMAGE_PATH}${poster_path}` : `${NO_IMAGE}`
                 }
                 alt="hi"
                 className="rounded w-full h-[250px] object-cover"
@@ -134,12 +133,10 @@ function CardCom() {
               key={id}
               className="min-w-[160px] text-gray-400 text-center m-2"
             >
-              <Link to={`/moviedetails/` + id}>
+              <Link to={`/dashboard/moviedetails/` + id}>
                 <img
                   src={
-                    poster_path
-                      ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
+                    poster_path ? `${IMAGE_PATH}${poster_path}` : `${NO_IMAGE}`
                   }
                   alt={id}
                   className="rounded w-full h-[250px] object-cover "
@@ -159,12 +156,10 @@ function CardCom() {
               key={key}
               className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
             >
-              <Link to={`/moviedetails/` + id}>
+              <Link to={`/dashboard/moviedetails/` + id}>
                 <img
                   src={
-                    poster_path
-                      ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
+                    poster_path ? `${IMAGE_PATH}${poster_path}` : `${NO_IMAGE}`
                   }
                   alt="hi"
                   className="rounded w-full h-[250px] object-cover"
