@@ -87,7 +87,7 @@ function CardCom() {
   return (
     <div className="pt-16 pl-2 pb-12 text-white">
       <p className="text-2xl">Trending Movies</p>
-      <div className="flex w-[98vw] overflow-x-scroll no-scrollbar">
+      <div className="flex w-[96vw] overflow-x-scroll no-scrollbar">
         {popularMovie.map(
           ({ id, poster_path, original_title, release_date }, key) => (
             <div
@@ -112,7 +112,7 @@ function CardCom() {
         )}
       </div>
       <p className="text-2xl">Popular Movies</p>
-      <div className="flex w-[98vw] overflow-x-scroll no-scrollbar">
+      <div className="flex w-[96vw] overflow-x-scroll no-scrollbar">
         {movie.map(({ id, poster_path, original_title, release_date }, key) => (
           <div
             key={key}
@@ -136,7 +136,7 @@ function CardCom() {
       </div>
 
       <p className="text-2xl">Similar Movies</p>
-      <div className="flex w-[98vw] overflow-x-scroll no-scrollbar">
+      <div className="flex w-[96vw] overflow-x-scroll no-scrollbar">
         {similarMovie.map(
           ({ id, poster_path, original_title, release_date }, key) => (
             <div
@@ -161,7 +161,7 @@ function CardCom() {
         )}
       </div>
       <p className="text-2xl">Upcomming Movies</p>
-      <div className="flex w-[98vw] overflow-x-scroll no-scrollbar">
+      <div className="flex w-[96vw] overflow-x-scroll no-scrollbar">
         {upcomingMovie.map(
           ({ id, poster_path, original_title, release_date }, key) => (
             <div
