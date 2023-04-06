@@ -3,22 +3,23 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function MovieDetailsCom() {
+  const API_URL = "https://api.themoviedb.org/3/movie/";
   const IMAGE_PATH = "https://www.themoviedb.org/t/p/w440_and_h660_face";
-  const NO_IMAGE =
-    "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png";
   const { id } = useParams();
+  const API_ENV = process.env.REACT_APP_TMDB_MOVIE_API_KEY;
+  const NO_IMAGE_URL = process.env.REACT_APP_NO_IMAGE_PATH;
+
+  //useState
   const [movieDetails, setMovieDetails] = React.useState([]);
+  //apiDataFetching
   const getMovieDetails = async () => {
     try {
-      const { data } = await axios.get(
-        "https://api.themoviedb.org/3/movie/" + [id],
-        {
-          params: {
-            api_key: "a255883eb9a0a2f7fadb1d891c4668a5",
-            // query: "Enthiran",
-          },
-        }
-      );
+      const { data } = await axios.get(API_URL + [id], {
+        params: {
+          api_key: API_ENV,
+          // query: "Enthiran",
+        },
+      });
 
       setMovieDetails(data);
     } catch (error) {
@@ -37,7 +38,7 @@ function MovieDetailsCom() {
           src={
             movieDetails.poster_path
               ? `${IMAGE_PATH}${movieDetails.poster_path}`
-              : `${NO_IMAGE}`
+              : `${NO_IMAGE_URL}`
           }
           alt="poster"
           className="rounded w-[50%]"
