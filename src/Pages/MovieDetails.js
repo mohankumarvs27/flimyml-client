@@ -53,8 +53,8 @@ function MovieDetailsCom() {
   }, [id]);
 
   return (
-    <div className="mt-[60px] grid justify-center items-center pl-4">
-      <div className="max-w-[768px] w-full h-[calc(100vw * 0.5625)]">
+    <div className="mt-[60px] grid justify-center items-center">
+      <div className="max-w-[768px] w-full h-[calc(100vw * 0.5625)] pl-2">
         {/* <img
           src={`${POSTER_PATH}${movieDetails.backdrop_path}`}
           alt="hi"
@@ -95,8 +95,8 @@ function MovieDetailsCom() {
         </div>
         {console.log(movieDetails)}
       </div>
-      <p className="text-2xl text-white">More Movies Like This</p>
-      <div className="flex w-[98vw] overflow-x-scroll no-scrollbar">
+      <p className="text-2xl text-white pl-2">More Movies Like This</p>
+      <div className="flex w-[98vw] overflow-x-scroll no-scrollbar pb-6">
         {similarMovie.map(
           ({ id, poster_path, original_title, release_date }, key) => (
             <div
