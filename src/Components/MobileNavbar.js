@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
 import { MdMovieFilter } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
@@ -10,25 +11,25 @@ export default function MobileNavbar() {
       id: 1,
       icon: <AiFillHome className="group-hover:text-blue-500 h-6 w-6" />,
       title: "Home",
-      path: "/home",
+      path: "/dashboard/home",
     },
     {
       id: 2,
       icon: <MdMovieFilter className="group-hover:text-blue-500 h-6 w-6" />,
       title: "Movies",
-      path: "/movies",
+      path: "/dashboard/movies",
     },
     {
       id: 3,
       icon: <HiTv className="group-hover:text-blue-500 h-6 w-6" />,
       title: "TVSeries",
-      path: "/tvseries",
+      path: "/dashboard/tvseries",
     },
     {
       id: 4,
       icon: <CgProfile className="group-hover:text-blue-500 h-6 w-6" />,
       title: "Profile",
-      path: "/profile",
+      path: "/dashboard/profile",
     },
   ];
   return (
@@ -51,12 +52,19 @@ export default function MobileNavbar() {
           <span className="group-hover:text-blue-500">Profile</span>
         </button> */}
 
-        {sidebardata.map(({ icon, title }, key) => (
+        {sidebardata.map(({ icon, title, path }, key) => (
           <React.Fragment key={key}>
-            <button className="group flex flex-col justify-center rounded items-center hover:bg-gray-800 p-1">
+            <NavLink
+              to={path}
+              className={({ isActive }) =>
+                isActive
+                  ? "bg-gray-800 group flex flex-col justify-center rounded items-center p-1 mb-2"
+                  : "group flex flex-col justify-center rounded items-center hover:bg-gray-800 p-1 mb-2"
+              }
+            >
               {icon}
               <span className="group-hover:text-blue-500">{title}</span>
-            </button>
+            </NavLink>
           </React.Fragment>
         ))}
       </div>

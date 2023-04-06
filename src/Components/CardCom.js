@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 
 function CardCom() {
   // const navigate = useNavigate();
+  const IMAGE_PATH = "https://www.themoviedb.org/t/p/w440_and_h660_face";
+  const NO_IMAGE =
+    "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png";
 
   const [movie, setMovie] = React.useState([]);
   const [similarMovie, setSimilarMovie] = React.useState([]);
@@ -41,7 +44,7 @@ function CardCom() {
 
   const similarGetMovie = async () => {
     const { data, status } = await axios.get(
-      "https://api.themoviedb.org/3/movie/299536/similar",
+      "https://api.themoviedb.org/3/movie/220848/similar",
       {
         params: {
           api_key: "a255883eb9a0a2f7fadb1d891c4668a5",
@@ -76,7 +79,7 @@ function CardCom() {
     getUpcomingMovie();
   }, []);
   return (
-    <div className="pt-16 pl-2 text-white">
+    <div className="pt-16 pl-2 pb-12 text-white">
       <p className="text-2xl">Trending Movies</p>
       <div className="flex w-[95vw] overflow-x-scroll no-scrollbar">
         {popularMovie.map(
@@ -85,18 +88,16 @@ function CardCom() {
               key={key}
               className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
             >
-              <Link to={`/moviedetails/` + id}>
+              <Link to={`/dashboard/moviedetails/` + id}>
                 <img
                   src={
-                    poster_path
-                      ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
+                    poster_path ? `${IMAGE_PATH}${poster_path}` : `${NO_IMAGE}`
                   }
                   alt="hi"
                   className="rounded w-full h-[250px] object-cover"
                 />
                 <p>{original_title}</p>
-                <span>{release_date}</span>
+                {/* <span>{release_date}</span> */}
               </Link>
             </div>
           )
@@ -109,18 +110,16 @@ function CardCom() {
             key={key}
             className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
           >
-            <Link to={`/moviedetails/` + id}>
+            <Link to={`/dashboard/moviedetails/` + id}>
               <img
                 src={
-                  poster_path
-                    ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                    : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
+                  poster_path ? `${IMAGE_PATH}${poster_path}` : `${NO_IMAGE}`
                 }
                 alt="hi"
                 className="rounded w-full h-[250px] object-cover"
               />
               <p>{original_title}</p>
-              <span>{release_date}</span>
+              {/* <span>{release_date}</span> */}
             </Link>
           </div>
         ))}
@@ -134,18 +133,16 @@ function CardCom() {
               key={id}
               className="min-w-[160px] text-gray-400 text-center m-2"
             >
-              <Link to={`/moviedetails/` + id}>
+              <Link to={`/dashboard/moviedetails/` + id}>
                 <img
                   src={
-                    poster_path
-                      ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
+                    poster_path ? `${IMAGE_PATH}${poster_path}` : `${NO_IMAGE}`
                   }
                   alt={id}
                   className="rounded w-full h-[250px] object-cover "
                 />
                 <p>{original_title}</p>
-                <span>{release_date}</span>
+                {/* <span>{release_date}</span> */}
               </Link>
             </div>
           )
@@ -159,18 +156,16 @@ function CardCom() {
               key={key}
               className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
             >
-              <Link to={`/moviedetails/` + id}>
+              <Link to={`/dashboard/moviedetails/` + id}>
                 <img
                   src={
-                    poster_path
-                      ? `https://www.themoviedb.org/t/p/w440_and_h660_face${poster_path}`
-                      : "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png"
+                    poster_path ? `${IMAGE_PATH}${poster_path}` : `${NO_IMAGE}`
                   }
                   alt="hi"
                   className="rounded w-full h-[250px] object-cover"
                 />
                 <p>{original_title}</p>
-                <span>{release_date}</span>
+                {/* <span>{release_date}</span> */}
               </Link>
             </div>
           )

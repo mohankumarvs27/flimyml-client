@@ -3,6 +3,9 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 function MovieDetailsCom() {
+  const IMAGE_PATH = "https://www.themoviedb.org/t/p/w440_and_h660_face";
+  const NO_IMAGE =
+    "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png";
   const { id } = useParams();
   const [movieDetails, setMovieDetails] = React.useState([]);
   const getMovieDetails = async () => {
@@ -28,10 +31,14 @@ function MovieDetailsCom() {
   }, []);
 
   return (
-    <div className="grid justify-center items-center p-2">
+    <div className="mt-16 grid justify-center items-center p-2">
       <div className="text-white text-center flex flex-col items-center ">
         <img
-          src={`https://www.themoviedb.org/t/p/w440_and_h660_face${movieDetails.poster_path}`}
+          src={
+            movieDetails.poster_path
+              ? `${IMAGE_PATH}${movieDetails.poster_path}`
+              : `${NO_IMAGE}`
+          }
           alt="poster"
           className="rounded w-[50%]"
         />
@@ -39,7 +46,7 @@ function MovieDetailsCom() {
         <p className="text-justify ">{movieDetails.overview}</p>
         {/* <p>{movieDetails}</p> */}
         {movieDetails?.genres?.map((each) => (
-          <p>{each.name}</p>
+          <p key={each.id}>{each.name}</p>
         ))}
 
         {console.log(movieDetails)}
