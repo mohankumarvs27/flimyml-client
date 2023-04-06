@@ -44,7 +44,7 @@ function CardCom() {
 
   const similarGetMovie = async () => {
     const { data, status } = await axios.get(
-      "https://api.themoviedb.org/3/movie/299536/similar",
+      "https://api.themoviedb.org/3/movie/220848/similar",
       {
         params: {
           api_key: "a255883eb9a0a2f7fadb1d891c4668a5",
