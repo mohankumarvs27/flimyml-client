@@ -79,7 +79,7 @@ function CardCom() {
     getUpcomingMovie();
   }, []);
   return (
-    <div className="pt-16 pl-2 text-white">
+    <div className="pt-16 pl-2 pb-12 text-white">
       <p className="text-2xl">Trending Movies</p>
       <div className="flex w-[95vw] overflow-x-scroll no-scrollbar">
         {popularMovie.map(
@@ -97,7 +97,7 @@ function CardCom() {
                   className="rounded w-full h-[250px] object-cover"
                 />
                 <p>{original_title}</p>
-                <span>{release_date}</span>
+                {/* <span>{release_date}</span> */}
               </Link>
             </div>
           )
@@ -119,7 +119,7 @@ function CardCom() {
                 className="rounded w-full h-[250px] object-cover"
               />
               <p>{original_title}</p>
-              <span>{release_date}</span>
+              {/* <span>{release_date}</span> */}
             </Link>
           </div>
         ))}
@@ -142,7 +142,7 @@ function CardCom() {
                   className="rounded w-full h-[250px] object-cover "
                 />
                 <p>{original_title}</p>
-                <span>{release_date}</span>
+                {/* <span>{release_date}</span> */}
               </Link>
             </div>
           )
@@ -165,7 +165,7 @@ function CardCom() {
                   className="rounded w-full h-[250px] object-cover"
                 />
                 <p>{original_title}</p>
-                <span>{release_date}</span>
+                {/* <span>{release_date}</span> */}
               </Link>
             </div>
           )
