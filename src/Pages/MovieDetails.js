@@ -6,8 +6,9 @@ import { HiLink } from "react-icons/hi";
 function MovieDetailsCom() {
   const API_URL = "https://api.themoviedb.org/3/movie/";
   const IMAGE_PATH = "https://www.themoviedb.org/t/p/w440_and_h660_face";
-  const POSTER_PATH =
-    "https://www.themoviedb.org/t/p/w1000_and_h450_multi_faces";
+  const CAST_PATH = "https://www.themoviedb.org/t/p/w276_and_h350_face";
+  // const POSTER_PATH =
+  //   "https://www.themoviedb.org/t/p/w1000_and_h450_multi_faces";
   const { id } = useParams();
   const API_ENV = process.env.REACT_APP_TMDB_MOVIE_API_KEY;
   const NO_IMAGE_URL =
@@ -15,6 +16,7 @@ function MovieDetailsCom() {
 
   //useState
   const [movieDetails, setMovieDetails] = React.useState([]);
+  const [castDetails, setCastDetails] = React.useState([]);
   const [similarMovie, setSimilarMovie] = React.useState([]);
   //apiDataFetching
   const getMovieDetails = async () => {
@@ -31,8 +33,26 @@ function MovieDetailsCom() {
       console.log(error);
     }
   };
+
+  //getCastDetails
+  const getCastDetails = async () => {
+    try {
+      const { data } = await axios.get(API_URL + [id] + "/credits", {
+        params: {
+          api_key: API_ENV,
+          // query: "Enthiran",
+        },
+      });
+
+      setCastDetails(data?.cast);
+      console.log(data?.cast);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const similarGetMovie = async () => {
-    const { data, status } = await axios.get(
+    const { data } = await axios.get(
       "https://api.themoviedb.org/3/movie/" + [id] + "/recommendations",
       {
         params: {
@@ -43,13 +63,15 @@ function MovieDetailsCom() {
       }
     );
     setSimilarMovie(data?.results);
-    console.log(data);
-    console.log(status);
+    //console.log(data);
+    // console.log(status);
   };
   //console.log([movieDetails]);
   useEffect(() => {
     getMovieDetails();
+    getCastDetails();
     similarGetMovie();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   return (
@@ -86,6 +108,30 @@ function MovieDetailsCom() {
             </div>
             <p className="text-xs">{movieDetails.release_date}</p>
             <p className="text-justify">{movieDetails.overview}</p>
+            <p className="text-2xl">Cast</p>
+            <ul className="flex w-[96vw] overflow-x-scroll no-scrollbar pb-6">
+              {castDetails.map(({ id, name, character, profile_path }, key) => (
+                <li
+                  key={id}
+                  className="ml-2.5 mr-1 my-2.5 rounded shadow bg-white min-w-[40%] overflow-hidden"
+                >
+                  {/* <Link to={`/dashboard/moviedetails/` + id}> */}
+                  <img
+                    src={
+                      profile_path
+                        ? `${CAST_PATH}${profile_path}`
+                        : `${NO_IMAGE_URL}`
+                    }
+                    alt={id}
+                    className="w-full rounded-t"
+                  />
+                  <p className="text-center text-black font-bold">{name}</p>
+                  <p className="text-center text-black">{character}</p>
+
+                  {/* </Link> */}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
         <div className="text-gray-500">
@@ -96,7 +142,7 @@ function MovieDetailsCom() {
         {console.log(movieDetails)}
       </div>
       <p className="text-2xl text-white pl-2">More Movies Like This</p>
-      <div className="flex w-[98vw] overflow-x-scroll no-scrollbar pb-6">
+      <div className="flex w-[98vw] overflow-x-scroll no-scrollbar pb-12">
         {similarMovie.map(
           ({ id, poster_path, original_title, release_date }, key) => (
             <div
