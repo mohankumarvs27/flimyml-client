@@ -11,7 +11,7 @@ function CardCom() {
   const API_ENV = process.env.REACT_APP_TMDB_MOVIE_API_KEY;
   const NO_IMAGE_URL =
     "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png";
-  const API_URL = "https://api.themoviedb.org/3/movie/";
+  // const API_URL = "https://api.themoviedb.org/3/movie/";
 
   //useState
   const [movie, setMovie] = React.useState([]);
@@ -82,6 +82,7 @@ function CardCom() {
     similarGetMovie();
     getPopularMovie();
     getUpcomingMovie();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
