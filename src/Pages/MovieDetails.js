@@ -76,7 +76,7 @@ function MovieDetailsCom() {
 
   return (
     <div className="mt-[60px] grid justify-center items-center">
-      <div className="max-w-[768px] w-full h-[calc(100vw * 0.5625)] pl-2">
+      <div className="w-full h-[calc(100vw * 0.5625)] pl-2">
         {/* <img
           src={`${POSTER_PATH}${movieDetails.backdrop_path}`}
           alt="hi"
@@ -113,7 +113,7 @@ function MovieDetailsCom() {
               {castDetails.map(({ id, name, character, profile_path }, key) => (
                 <li
                   key={id}
-                  className="ml-2.5 mr-1 my-2.5 rounded shadow bg-white min-w-[40%] overflow-hidden"
+                  className="ml-2.5 mr-1 my-2.5 rounded shadow bg-white min-w-[150px] overflow-hidden"
                 >
                   {/* <Link to={`/dashboard/moviedetails/` + id}> */}
                   <img
