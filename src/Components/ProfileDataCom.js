@@ -1,9 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 
 function ProfileDataCom() {
   const [value, setValue] = React.useState("");
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   //useeffect
   React.useEffect(() => {
@@ -11,7 +11,7 @@ function ProfileDataCom() {
   }, []);
 
   return (
-    <div className="pt-14 text-white p-2 flex justify-center overflow-scroll">
+    <div className="pt-14 text-white p-2 flex justify-center">
       <div className="rounded shadow-lg">
         <div className="flex items-center justify-center flex-col space-y-2">
           <img
