@@ -40,6 +40,7 @@ function MovieDetailsCom() {
       const { data } = await axios.get(API_URL + [id] + "/credits", {
         params: {
           api_key: API_ENV,
+          minLength: "2",
           // query: "Enthiran",
         },
       });
