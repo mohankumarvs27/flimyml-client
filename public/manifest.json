@@ -18,8 +18,35 @@
       "sizes": "512x512"
     }
   ],
+  
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "shortcuts": [
+    {
+      "name": "Home",
+      "short_name": "Home",
+      "description": "Recommend Movies To User",
+      "url": "/dashboard/home",
+      "icons": [
+        {
+          "src": "/icons/home.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Profile",
+      "short_name": "Profile",
+      "description": "See Your Personal Details",
+      "url": "/dashboard/profile",
+      "icons": [
+        {
+          "src": "/icons/profile.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
 }
