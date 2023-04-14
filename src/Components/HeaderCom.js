@@ -13,13 +13,10 @@ function HeaderCom() {
           <div className="flex items-center text-white space-x-2">
             {/* <HiMenuAlt1 className="h-6 w-6 text-gray-400" /> */}
             <img
-              src="https://res.cloudinary.com/dqot1ggrh/image/upload/v1680239160/logo_xcoqwa.svg"
+              src="https://res.cloudinary.com/dqot1ggrh/image/upload/v1681488911/logo_dy8m8j.png"
               alt="logo"
-              className="w-10"
+              className="w-40"
             />
-            <p className="hidden sm:inline-block">
-              Movie Recommendation System
-            </p>
           </div>
           <div className="flex items-center space-x-2">
             <div className="p-1 hidden md:inline relative">
