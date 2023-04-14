@@ -17,6 +17,7 @@ function HeaderCom() {
               alt="logo"
               className="w-40"
             />
+            {/* <p>code changed</p> */}
           </div>
           <div className="flex items-center space-x-2">
             <div className="p-1 hidden md:inline relative">
