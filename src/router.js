@@ -26,7 +26,7 @@ function RouterCom() {
           <Route path="moviedetails/:id" element={<MovieDetails />} />
           <Route path="seriesdetails/:id" element={<SeriesDetailsCom />} />
           <Route path="movies" element={<MoviesDataCom />} />
-          <Route path="tvseries" element={<TvseriesDataCom />} />
+          <Route path="webseries" element={<TvseriesDataCom />} />
           <Route path="profile" element={<ProfileDataCom />} />
         </Route>
         {/* <Route path="/poppup" element={<MobileNavbar />} />
