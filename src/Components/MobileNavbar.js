@@ -22,8 +22,8 @@ export default function MobileNavbar() {
     {
       id: 3,
       icon: <HiTv className="group-hover:text-blue-500 h-6 w-6" />,
-      title: "TVSeries",
-      path: "/dashboard/tvseries",
+      title: "WebSeries",
+      path: "/dashboard/webseries",
     },
     {
       id: 4,

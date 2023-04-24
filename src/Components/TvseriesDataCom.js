@@ -79,7 +79,7 @@ function TvseriesDataCom() {
   }, []);
 
   return (
-    <div className="pt-16 text-white">
+    <div className="pt-16 text-white pb-12">
       {/* Netflix Shows */}
       <p className="text-2xl">Popular Netfilx Shows</p>
       <div className="flex w-[96vw] overflow-x-scroll no-scrollbar">
