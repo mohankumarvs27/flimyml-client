@@ -1,9 +1,15 @@
 import React from "react";
-//import { useNavigate } from "react-router-dom";
+import { AiOutlineLogout } from "react-icons/ai";
+import { useNavigate } from "react-router-dom";
 
 function ProfileDataCom() {
   const [value, setValue] = React.useState("");
-  //const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const logoutFun = () => {
+    localStorage.removeItem("dbdatalocal");
+    navigate("/login");
+  };
 
   //useeffect
   React.useEffect(() => {
@@ -11,15 +17,43 @@ function ProfileDataCom() {
   }, []);
 
   return (
-    <div className="pt-14 text-white p-2 flex justify-center">
-      <div className="rounded shadow-lg">
-        <div className="flex items-center justify-center flex-col space-y-2">
-          <img
-            className="h-32 w-32 rounded-full object-cover"
-            src={value[1]}
-            alt="profile_pic"
-          />
-          <p className="text-md p-2 w-full rounded">{value[0]}</p>
+    <div className="pt-16 text-white p-2 flex flex-col justify-center items-center">
+      <div className="flex">
+        <img
+          className="h-32 w-32 rounded-full object-cover"
+          src={value[1]}
+          alt="profile_pic"
+        />
+      </div>
+      <div className="w-full md:w-96">
+        <div className="w-full mt-10">
+          <p className="pl-2">Name</p>
+          <p className="text-md py-4 pl-3 w-full rounded bg-gray-700">
+            {value[0]}
+          </p>
+        </div>
+        <div className="w-full mt-8">
+          <p className="pl-2">Email</p>
+          <p className="text-md py-4 pl-3 w-full rounded bg-gray-700">
+            {value[2]}
+          </p>
+        </div>
+        <div className="w-full mt-8">
+          <p className="pl-2">PhoneNumber</p>
+          <p className="text-md py-4 pl-3 w-full rounded bg-gray-700">
+            {value[3]}
+          </p>
+        </div>
+        <div
+          className="w-full mt-8"
+          onClick={() => {
+            logoutFun();
+          }}
+        >
+          <p className="text-xl flex items-center justify-center py-4 pl-3 w-full rounded bg-gray-700 hover:bg-gray-600">
+            <AiOutlineLogout />
+            <span className="pl-2">Logout</span>
+          </p>
         </div>
       </div>
     </div>

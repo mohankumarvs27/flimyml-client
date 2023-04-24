@@ -12,6 +12,7 @@ import CardCom from "./Components/CardCom";
 import MoviesDataCom from "./Components/MoviesDataCom";
 import TvseriesDataCom from "./Components/TvseriesDataCom";
 import ProfileDataCom from "./Components/ProfileDataCom";
+import SeriesDetailsCom from "./Pages/SeriesDetails";
 
 function RouterCom() {
   return (
@@ -23,6 +24,7 @@ function RouterCom() {
         <Route path="/dashboard" element={<Dashboard />}>
           <Route path="home" element={<CardCom />} />
           <Route path="moviedetails/:id" element={<MovieDetails />} />
+          <Route path="seriesdetails/:id" element={<SeriesDetailsCom />} />
           <Route path="movies" element={<MoviesDataCom />} />
           <Route path="tvseries" element={<TvseriesDataCom />} />
           <Route path="profile" element={<ProfileDataCom />} />

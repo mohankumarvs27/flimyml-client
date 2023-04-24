@@ -24,10 +24,12 @@ function LoginCom() {
       console.log(data);
 
       const myobject = {
-        fullName: data?.user?.fullName,
+        userName: data?.user?.userName,
         imageUrl: data?.user?.imageUrl,
+        email: data?.user?.email,
+        phoneNumber: data?.user?.phoneNumber,
       };
-      console.log(myobject?.fullName);
+      console.log(myobject?.userName);
 
       localStorage.setItem(
         "dbdatalocal",
