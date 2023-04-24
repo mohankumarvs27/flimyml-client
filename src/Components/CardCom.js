@@ -105,7 +105,7 @@ function CardCom() {
                   alt="hi"
                   className="rounded w-full h-[250px] object-cover"
                 />
-                <p>{original_title}</p>
+                <p className="line-clamp-2">{original_title}</p>
                 {/* <span>{release_date}</span> */}
               </Link>
             </div>
@@ -129,7 +129,7 @@ function CardCom() {
                 alt="hi"
                 className="rounded w-full h-[250px] object-cover"
               />
-              <p>{original_title}</p>
+              <p className="line-clamp-2">{original_title}</p>
               {/* <span>{release_date}</span> */}
             </Link>
           </div>
@@ -154,7 +154,7 @@ function CardCom() {
                   alt={id}
                   className="rounded w-full h-[250px] object-cover "
                 />
-                <p>{original_title}</p>
+                <p className="line-clamp-2">{original_title}</p>
                 {/* <span>{release_date}</span> */}
               </Link>
             </div>
@@ -179,7 +179,7 @@ function CardCom() {
                   alt="hi"
                   className="rounded w-full h-[250px] object-cover"
                 />
-                <p>{original_title}</p>
+                <p className="line-clamp-2">{original_title}</p>
                 {/* <span>{release_date}</span> */}
               </Link>
             </div>
