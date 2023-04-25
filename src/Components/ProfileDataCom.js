@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 function ProfileDataCom() {
   const [value, setValue] = React.useState("");
   const navigate = useNavigate();
+  const PROFILE_PATH = "/assets/avatar_default.jpg";
 
   const logoutFun = () => {
     localStorage.removeItem("dbdatalocal");
@@ -21,7 +22,7 @@ function ProfileDataCom() {
       <div className="flex">
         <img
           className="h-32 w-32 rounded-full object-cover"
-          src={value[1]}
+          src={value[1] ? `${value[1]}` : `${PROFILE_PATH}`}
           alt="profile_pic"
         />
       </div>

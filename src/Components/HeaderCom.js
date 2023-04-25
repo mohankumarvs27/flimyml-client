@@ -8,15 +8,11 @@ import PoppupComProfile from "./PoppupComProfile";
 function HeaderCom() {
   return (
     <>
-      <nav className="fixed top-0 px-3.5 bg-gray-800 py-1 w-full z-20">
+      <nav className="fixed top-0 px-3.5 bg-gray-800 py-2 w-full z-20">
         <div className="flex items-center justify-between">
           <div className="flex items-center text-white space-x-2">
             {/* <HiMenuAlt1 className="h-6 w-6 text-gray-400" /> */}
-            <img
-              src="https://res.cloudinary.com/dqot1ggrh/image/upload/v1681488911/logo_dy8m8j.png"
-              alt="logo"
-              className="w-40"
-            />
+            <img src="/assets/logo.svg" alt="logo" className="w-40" />
             {/* <p>code changed</p> */}
           </div>
           <div className="flex items-center space-x-2">
@@ -30,10 +26,10 @@ function HeaderCom() {
             </div>
             {/* <FaSearch className="hover:bg-red-100 rounded border m-2 text-black" /> */}
           </div>
-          <div className="flex space-x-2 items-center">
+          {/* <div className="flex space-x-2 items-center">
             <IoNotifications className="h-6 w-6 hidden md:inline-block" />
             <PoppupComProfile />
-          </div>
+          </div> */}
         </div>
       </nav>
     </>

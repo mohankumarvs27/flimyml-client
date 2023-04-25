@@ -84,7 +84,7 @@ function TvseriesDataCom() {
       <p className="text-2xl">Popular Netfilx Shows</p>
       <div className="flex w-[96vw] overflow-x-scroll no-scrollbar">
         {popularNetflix.map(
-          ({ id, poster_path, original_title, release_date }, key) => (
+          ({ id, poster_path, original_name, release_date }, key) => (
             <div
               key={key}
               className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
@@ -97,9 +97,10 @@ function TvseriesDataCom() {
                       : `${NO_IMAGE_URL}`
                   }
                   alt="hi"
+                  style={{ height: "250px" }}
                   className="rounded w-full h-[250px] object-cover"
                 />
-                <p className="line-clamp-2">{original_title}</p>
+                <p className="line-clamp-2">{original_name}</p>
                 {/* <span>{release_date}</span> */}
               </Link>
             </div>
@@ -111,7 +112,7 @@ function TvseriesDataCom() {
       <p className="text-2xl">Popular Amazon Shows</p>
       <div className="flex w-[96vw] overflow-x-scroll no-scrollbar">
         {popularAmazon.map(
-          ({ id, poster_path, original_title, release_date }, key) => (
+          ({ id, poster_path, original_name, release_date }, key) => (
             <div
               key={key}
               className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
@@ -124,9 +125,10 @@ function TvseriesDataCom() {
                       : `${NO_IMAGE_URL}`
                   }
                   alt="hi"
+                  style={{ height: "250px" }}
                   className="rounded w-full h-[250px] object-cover"
                 />
-                <p className="line-clamp-2">{original_title}</p>
+                <p className="line-clamp-2">{original_name}</p>
                 {/* <span>{release_date}</span> */}
               </Link>
             </div>
@@ -138,7 +140,7 @@ function TvseriesDataCom() {
       <p className="text-2xl">Popular Hotstar Shows</p>
       <div className="flex w-[96vw] overflow-x-scroll no-scrollbar">
         {popularHotstar.map(
-          ({ id, poster_path, original_title, release_date }, key) => (
+          ({ id, poster_path, original_name, release_date }, key) => (
             <div
               key={key}
               className="min-w-[160px] text-gray-400 text-center m-2 cursor-pointer"
@@ -151,9 +153,10 @@ function TvseriesDataCom() {
                       : `${NO_IMAGE_URL}`
                   }
                   alt="hi"
+                  style={{ height: "250px" }}
                   className="rounded w-full h-[250px] object-cover"
                 />
-                <p className="line-clamp-2">{original_title}</p>
+                <p className="line-clamp-2">{original_name}</p>
                 {/* <span>{release_date}</span> */}
               </Link>
             </div>
