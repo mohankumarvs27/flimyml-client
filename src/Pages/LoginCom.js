@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -47,7 +46,7 @@ function LoginCom() {
         <h1 className="text-center p-4">Login Page</h1>
 
         <div className="flex items-center justify-center mb-4">
-          <img src={logo} className="h-32" alt="logo" />
+          <img src="/assets/logo.svg" className="h-32" alt="logo" />
         </div>
         <div>
           <label htmlFor="email">Email</label>

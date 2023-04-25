@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import logo from "./logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 
 function RegisterCom() {
@@ -39,7 +38,7 @@ function RegisterCom() {
         <div className="bg-white w-96 md:w-3/4 xl:w-1/3 p-6 rounded shadow">
           <>
             <div className="flex items-center justify-center mb-4">
-              <img src={logo} className="h-32" alt="logo" />
+              <img src="/assets/logo.svg" className="h-32" alt="logo" />
             </div>
             <h1 className="text-center p-4 text-xl">Register Page</h1>
             <div>
