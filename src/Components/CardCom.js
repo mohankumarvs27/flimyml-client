@@ -103,7 +103,7 @@ function CardCom() {
                       : `${NO_IMAGE_URL}`
                   }
                   alt="hi"
-                  className="rounded w-full h-[250px] object-cover"
+                  className="rounded w-full h-[250px] object-cover min-h-[250px] bg-white"
                 />
                 <p className="line-clamp-2">{original_title}</p>
                 {/* <span>{release_date}</span> */}
@@ -127,7 +127,7 @@ function CardCom() {
                     : `${NO_IMAGE_URL}`
                 }
                 alt="hi"
-                className="rounded w-full h-[250px] object-cover"
+                className="rounded w-full h-[250px] object-cover min-h-[250px] bg-white"
               />
               <p className="line-clamp-2">{original_title}</p>
               {/* <span>{release_date}</span> */}
@@ -152,7 +152,7 @@ function CardCom() {
                       : `${NO_IMAGE_URL}`
                   }
                   alt={id}
-                  className="rounded w-full h-[250px] object-cover "
+                  className="rounded w-full h-[250px] object-cover min-h-[250px] bg-white"
                 />
                 <p className="line-clamp-2">{original_title}</p>
                 {/* <span>{release_date}</span> */}
@@ -177,7 +177,7 @@ function CardCom() {
                       : `${NO_IMAGE_URL}`
                   }
                   alt="hi"
-                  className="rounded w-full h-[250px] object-cover"
+                  className="rounded w-full h-[250px] object-cover min-h-[250px] bg-white"
                 />
                 <p className="line-clamp-2">{original_title}</p>
                 {/* <span>{release_date}</span> */}
