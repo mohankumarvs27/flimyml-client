@@ -98,7 +98,7 @@ function TvseriesDataCom() {
                   }
                   alt="hi"
                   style={{ height: "250px" }}
-                  className="rounded w-full h-[250px] object-cover"
+                  className="rounded w-full h-[250px] object-cover min-h-[250px] bg-white"
                 />
                 <p className="line-clamp-2">{original_name}</p>
                 {/* <span>{release_date}</span> */}
@@ -126,7 +126,7 @@ function TvseriesDataCom() {
                   }
                   alt="hi"
                   style={{ height: "250px" }}
-                  className="rounded w-full h-[250px] object-cover"
+                  className="rounded w-full h-[250px] object-cover min-h-[250px] bg-white"
                 />
                 <p className="line-clamp-2">{original_name}</p>
                 {/* <span>{release_date}</span> */}
@@ -154,7 +154,7 @@ function TvseriesDataCom() {
                   }
                   alt="hi"
                   style={{ height: "250px" }}
-                  className="rounded w-full h-[250px] object-cover"
+                  className="rounded w-full h-[250px] object-cover min-h-[250px] bg-white"
                 />
                 <p className="line-clamp-2">{original_name}</p>
                 {/* <span>{release_date}</span> */}
