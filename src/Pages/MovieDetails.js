@@ -40,7 +40,7 @@ function MovieDetailsCom() {
         const videoId = trailer.key;
         const url = `https://www.youtube.com/watch?v=${videoId}`;
         setTrailerUrl(url);
-        console.log(url);
+        // console.log(url);
       }
 
       setMovieDetails(data);
