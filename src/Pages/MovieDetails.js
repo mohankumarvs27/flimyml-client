@@ -59,7 +59,7 @@ function MovieDetailsCom() {
         },
       });
 
-      setCastDetails(data?.cast);
+      setCastDetails(data?.cast.slice(0, 9));
       console.log(data?.cast);
     } catch (error) {
       console.log(error);
