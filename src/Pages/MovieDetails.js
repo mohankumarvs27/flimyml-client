@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { HiLink } from "react-icons/hi";
 import { FaStar, FaShare, FaRegComment, FaRegHeart } from "react-icons/fa";
-import ReactPlayer from "react-player";
+// import ReactPlayer from "react-player";
 
 function MovieDetailsCom() {
   const API_URL = "https://api.themoviedb.org/3/movie/";
@@ -96,9 +96,9 @@ function MovieDetailsCom() {
 
   return (
     <div className="mt-[60px] grid justify-center">
-      <div className="p-2 flex items-center justify-center">
+      {/* <div className="p-2 flex items-center justify-center">
         {trailerUrl ? <ReactPlayer url={trailerUrl} controls="true" /> : null}
-      </div>
+      </div> */}
       <div className="w-full h-[calc(100vw * 0.5625)] pl-2">
         {/* <img
           src={`${POSTER_PATH}${movieDetails.backdrop_path}`}
