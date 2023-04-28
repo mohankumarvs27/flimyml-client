@@ -3,7 +3,6 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
 function RegisterCom() {
-  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,8 +14,8 @@ function RegisterCom() {
       const { data } = await axios.post(
         "https://filmyml-backend.vercel.app/api/user/createuser",
         {
-          userName: name,
           email: email,
+          userName: email.split("@")[0],
           password: password,
           confirmPassword: confirmPassword,
           phoneNumber: phoneNumber,
@@ -41,21 +40,7 @@ function RegisterCom() {
               <img src="/assets/logo.svg" className="h-32" alt="logo" />
             </div>
             <h1 className="text-center p-4 text-xl">Register Page</h1>
-            <div>
-              <label htmlFor="name" className="">
-                User Name
-              </label>
-              <input
-                type="text"
-                name="user_name"
-                className="w-full p-2 bg-gray-50 text-gray-500 outline-none mb-4"
-                placeholder="Enter Your User Name"
-                onChange={(e) => {
-                  setName(e.target.value);
-                }}
-                required
-              ></input>
-            </div>
+
             <div>
               <label htmlFor="email">Email</label>
               <input
