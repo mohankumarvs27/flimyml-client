@@ -1,5 +1,7 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
+import { IoNotifications } from "react-icons/io5";
+import PoppupComProfile from "./PoppupComProfile";
 //import { HiMenuAlt1 } from "react-icons/hi";
 function HeaderCom() {
   return (
@@ -22,10 +24,10 @@ function HeaderCom() {
             </div>
             {/* <FaSearch className="hover:bg-red-100 rounded border m-2 text-black" /> */}
           </div>
-          {/* <div className="flex space-x-2 items-center">
+          <div className="flex space-x-2 items-center">
             <IoNotifications className="h-6 w-6 hidden md:inline-block" />
             <PoppupComProfile />
-          </div> */}
+          </div>
         </div>
       </nav>
     </>

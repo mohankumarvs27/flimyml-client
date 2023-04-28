@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function PoppupComProfile() {
   const [value, setValue] = React.useState("");
   const navigate = useNavigate();
+  const PROFILE_PATH = "/assets/avatar_default.jpg";
 
   const logoutFun = () => {
     localStorage.removeItem("dbdatalocal");
@@ -25,7 +26,7 @@ export default function PoppupComProfile() {
           <Menu.Button className="">
             <img
               className="h-10 w-10 rounded-full"
-              src={value[1]}
+              src={value[1] ? `${value[1]}` : `${PROFILE_PATH}`}
               alt="profile_pic"
             />
           </Menu.Button>
