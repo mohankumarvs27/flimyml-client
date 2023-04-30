@@ -30,7 +30,7 @@ function ProfileDataCom() {
         <div className="w-full mt-10">
           <p className="pl-2">User Name</p>
           <p className="text-md py-4 pl-3 w-full rounded bg-gray-700">
-            {value[0]}
+            @{value[0]}
           </p>
         </div>
         <div className="w-full mt-8">

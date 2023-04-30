@@ -40,7 +40,7 @@ function MovieDetailsCom() {
         const videoId = trailer.key;
         const url = `https://www.youtube.com/watch?v=${videoId}`;
         setTrailerUrl(url);
-        // console.log(url);
+        console.log(trailerUrl);
       }
 
       setMovieDetails(data);
@@ -105,7 +105,7 @@ function MovieDetailsCom() {
           alt="hi"
           className="h-[250px] w-full object-contain"
         /> */}
-        <div className="flex flex-col">
+        <div className="flex items-center flex-col">
           <img
             src={
               movieDetails.poster_path
