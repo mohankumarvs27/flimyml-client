@@ -75,7 +75,7 @@ function SeriesDetailsCom() {
   }, [id]);
 
   return (
-    <div className="mt-[60px] grid justify-center items-center">
+    <div className="mt-[68px] grid justify-center items-center">
       <div className="w-full h-[calc(100vw * 0.5625)] pl-2">
         {/* <img
           src={`${POSTER_PATH}${movieDetails.backdrop_path}`}
