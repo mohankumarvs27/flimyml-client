@@ -82,10 +82,10 @@ function MovieDetailsCom() {
     // console.log(status);
   };
 
-  const formatVoteCount = (count) => {
-    const formatter = Intl.NumberFormat("en-US", { notation: "compact" });
-    return formatter.format(count);
-  };
+  // const formatVoteCount = (count) => {
+  //   const formatter = Intl.NumberFormat("en-US", { notation: "compact" });
+  //   return formatter.format(count);
+  // };
   //console.log([movieDetails]);
   useEffect(() => {
     getMovieDetails();
@@ -95,7 +95,7 @@ function MovieDetailsCom() {
   }, [id]);
 
   return (
-    <div className="mt-[60px] grid justify-center">
+    <div className="mt-[68px] grid justify-center">
       {/* <div className="p-2 flex items-center justify-center">
         {trailerUrl ? <ReactPlayer url={trailerUrl} controls="true" /> : null}
       </div> */}
@@ -131,7 +131,7 @@ function MovieDetailsCom() {
             </div>
             <p className="text-xs">{movieDetails.release_date}</p>
             <p className="text-justify">{movieDetails.overview}</p>
-            <div className="flex p-1 rounded">
+            <div className="flex pl-1 rounded">
               {movieDetails.vote_average ? (
                 <div className="flex items-center space-x-1 hover:bg-gray-800 rounded p-1">
                   <FaStar className="text-yellow-400" />
@@ -141,18 +141,18 @@ function MovieDetailsCom() {
                     </span>
                     /10
                   </p>
-                  <span className="before:content-[''] text-gray-500">
+                  {/* <span className="before:content-[''] text-gray-500">
                     {formatVoteCount(movieDetails.vote_count)}
-                  </span>
+                  </span> */}
                 </div>
               ) : null}
               <div className="p-2 ml-2 rounded flex space-x-1 items-center hover:bg-gray-800">
-                <FaShare />
-                <span>Share</span>
-              </div>
-              <div className="p-2 ml-2 rounded flex space-x-1 items-center hover:bg-gray-800">
                 <FaRegHeart />
                 <span>Like</span>
+              </div>
+              <div className="p-2 ml-2 rounded flex space-x-1 items-center hover:bg-gray-800">
+                <FaShare />
+                <span>Share</span>
               </div>
               <div className="p-2 ml-2 rounded flex space-x-1 items-center hover:bg-gray-800">
                 <FaRegComment />
