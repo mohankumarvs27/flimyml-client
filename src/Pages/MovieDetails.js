@@ -131,9 +131,9 @@ function MovieDetailsCom() {
             </div>
             <p className="text-xs">{movieDetails.release_date}</p>
             <p className="text-justify">{movieDetails.overview}</p>
-            <div className="flex pl-1 rounded">
+            <div className="mt-2 flex justify-center rounded">
               {movieDetails.vote_average ? (
-                <div className="flex items-center space-x-1 hover:bg-gray-800 rounded p-1">
+                <div className="flex flex-col items-center space-x-1 hover:bg-gray-800 rounded p-1">
                   <FaStar className="text-yellow-400" />
                   <p className="text-white">
                     <span className="font-bold">
@@ -146,15 +146,15 @@ function MovieDetailsCom() {
                   </span> */}
                 </div>
               ) : null}
-              <div className="p-2 ml-2 rounded flex space-x-1 items-center hover:bg-gray-800">
+              <div className="p-2 ml-2 rounded flex flex-col space-x-1 items-center hover:bg-gray-800">
                 <FaRegHeart />
                 <span>Like</span>
               </div>
-              <div className="p-2 ml-2 rounded flex space-x-1 items-center hover:bg-gray-800">
+              <div className="p-2 ml-2 rounded flex flex-col space-x-1 items-center hover:bg-gray-800">
                 <FaShare />
                 <span>Share</span>
               </div>
-              <div className="p-2 ml-2 rounded flex space-x-1 items-center hover:bg-gray-800">
+              <div className="p-2 ml-2 rounded flex flex-col space-x-1 items-center hover:bg-gray-800">
                 <FaRegComment />
                 <span>Comment</span>
               </div>
