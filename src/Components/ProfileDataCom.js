@@ -18,7 +18,7 @@ function ProfileDataCom() {
   }, []);
 
   return (
-    <div className="pt-16 text-white p-2 flex flex-col justify-center items-center">
+    <div className="pt-[4.5rem] text-white p-2 flex flex-col justify-center items-center">
       <div className="flex">
         <img
           className="h-32 w-32 rounded-full object-cover"
