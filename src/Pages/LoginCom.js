@@ -27,6 +27,7 @@ function LoginCom() {
         imageUrl: data?.user?.imageUrl,
         email: data?.user?.email,
         phoneNumber: data?.user?.phoneNumber,
+        geners: data?.user?.genres,
       };
       console.log(myobject?.userName);
 

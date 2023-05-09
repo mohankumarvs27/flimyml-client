@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
+// import ListboxCom from "../Components/ListBoxCom";
 
 function RegisterCom() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [selectedValue, setSelectedValue] = useState("");
   const navigate = useNavigate();
 
   const registerFun = async () => {
@@ -19,6 +21,7 @@ function RegisterCom() {
           password: password,
           confirmPassword: confirmPassword,
           phoneNumber: phoneNumber,
+          selectedValue: selectedValue,
         }
       );
 
@@ -30,6 +33,16 @@ function RegisterCom() {
       console.log(error);
     }
   };
+
+  React.useEffect(() => {
+    console.log(selectedValue);
+  }, [selectedValue]);
+
+  function handleChange(event) {
+    setSelectedValue(event.target.value, () => {
+      console.log(selectedValue);
+    });
+  }
 
   return (
     <>
@@ -46,7 +59,7 @@ function RegisterCom() {
               <input
                 type="email"
                 name="email"
-                className="w-full p-2 bg-gray-50 text-gray-500 outline-none mb-4"
+                className="w-full p-2 bg-gray-200 rounded text-gray-500 outline-none mb-4"
                 placeholder="Enter your email id"
                 onChange={(e) => {
                   setEmail(e.target.value);
@@ -59,7 +72,7 @@ function RegisterCom() {
               <input
                 type="password"
                 name="password"
-                className="w-full p-2 bg-gray-50 text-gray-500 outline-none mb-4"
+                className="w-full p-2 bg-gray-200 rounded text-gray-500 outline-none mb-4"
                 placeholder="Enter your Password"
                 onChange={(e) => {
                   setPassword(e.target.value);
@@ -72,7 +85,7 @@ function RegisterCom() {
               <input
                 type="password"
                 name="confirmPassword"
-                className="w-full p-2 bg-gray-50 text-gray-500 outline-none mb-4"
+                className="w-full p-2 bg-gray-200 rounded text-gray-500 outline-none mb-4"
                 placeholder="Enter your Password"
                 onChange={(e) => {
                   setConfirmPassword(e.target.value);
@@ -85,13 +98,31 @@ function RegisterCom() {
               <input
                 type="tel"
                 name="phoneNumber"
-                className="w-full p-2 bg-gray-50 text-gray-500 outline-none mb-4"
+                className="w-full p-2 bg-gray-200 rounded text-gray-500 outline-none mb-4"
                 placeholder="Enter your Phone Number"
                 onChange={(e) => {
                   setPhoneNumber(e.target.value);
                 }}
                 required
               ></input>
+            </div>
+            <div>
+              <label htmlFor="cars">What is your favourite genre?</label>
+              <br />
+              <select
+                name="cars"
+                id="cars"
+                className="bg-gray-200 rounded  text-gray-500 outline-none w-full py-2 px-1"
+                value={selectedValue}
+                onChange={handleChange}
+              >
+                <option value="28">Action</option>
+                <option value="12">Adventure</option>
+                <option value="16">Animation</option>
+                <option value="35">Comedy</option>
+                <option value="80">Crime</option>
+                <option value="878">Science Fiction</option>
+              </select>
             </div>
             <div>
               <input type="checkbox" id="terms" className="" required />
