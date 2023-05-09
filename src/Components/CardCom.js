@@ -36,6 +36,8 @@ function CardCom() {
     setPopularMovie(data?.results);
   };
 
+  const genere = value[4];
+
   const getMovie = async () => {
     const { data } = await axios.get(
       "https://api.themoviedb.org/3/movie/141052/recommendations",
@@ -70,7 +72,7 @@ function CardCom() {
       {
         params: {
           api_key: API_ENV,
-          with_genres: value[4],
+          with_genres: genere,
           language: "en-US",
         },
       }
@@ -103,7 +105,7 @@ function CardCom() {
     getUserMovie();
     setValue(JSON.parse(localStorage.getItem("dbdatalocal")));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [genere]);
 
   return (
     <div className="pt-16 pl-2 pb-12 text-white">
