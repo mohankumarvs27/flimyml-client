@@ -10,7 +10,7 @@ function LoginCom() {
   const loginFun = async () => {
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACKEND_API_URL}/api/user/checkuser`,
+        `${process.env.REACT_APP_BACKEND_API_URL}api/user/checkuser`,
         {
           email: email,
           password: password,
