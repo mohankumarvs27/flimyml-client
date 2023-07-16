@@ -14,7 +14,7 @@ function RegisterCom() {
   const registerFun = async () => {
     try {
       const { data } = await axios.post(
-        `${process.env.REACT_APP_BACKEND_API_URL}api/user/createuser`,
+        `${process.env.REACT_APP_BACKEND_API_URL}/api/user/createuser`,
         {
           email: email,
           userName: email.split("@")[0],
