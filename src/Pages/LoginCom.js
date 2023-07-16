@@ -10,7 +10,7 @@ function LoginCom() {
   const loginFun = async () => {
     try {
       const { data } = await axios.post(
-        "https://filmyml-backend.vercel.app/api/user/checkuser",
+        `${process.env.REACT_APP_BACKEND_API_URL}/api/user/checkuser`,
         {
           email: email,
           password: password,
@@ -44,7 +44,7 @@ function LoginCom() {
   return (
     <div className="flex items-center justify-center h-screen bg-gray-100">
       <div className="bg-white w-96 md:w-3/4 xl:w-1/3 p-6 rounded shadow">
-        <h1 className="text-center p-4">Login Page</h1>
+        <h1 className="text-center p-4 text-3xl">Login Page</h1>
 
         <div className="flex items-center justify-center mb-4">
           <img src="/assets/logo.svg" className="h-32" alt="logo" />
@@ -79,14 +79,14 @@ function LoginCom() {
           onClick={() => {
             loginFun();
           }}
-          className="bg-blue-500 w-full py-2 rounded justify-center hover:bg-blue-600 text-white my-2"
+          className="w-full py-2 rounded justify-center bg-[#212b36] hover:bg-[#454f5b] text-white my-2"
         >
           Login
         </button>
 
         <p className="text-center p-4">
           Don't you have an account?
-          <Link to="/register" className="text-blue-500">
+          <Link to="/register" className="text-[#00a76f]">
             Register
           </Link>
         </p>
