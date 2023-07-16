@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# Attractiveness and user friendliness of AICTE website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Website is the redesign of Current [Aicte Website](https://www.aicte-india.org/). This Project is in Testing Phase Only.
 
-## Available Scripts
+## Tech Stack
 
-In the project directory, you can run:
+- React, Materialui, Bootstrap
 
 ### `npm start`
 

@@ -67,18 +67,9 @@ function MovieDetailsCom() {
   };
 
   const similarGetMovie = async () => {
-    const { data } = await axios.get(
-      "https://api.themoviedb.org/3/movie/" + [id] + "/recommendations",
-      {
-        params: {
-          api_key: API_ENV,
-          adult: "false",
-          region: "IN",
-        },
-      }
-    );
-    setSimilarMovie(data?.results);
-    //console.log(data);
+    const { data } = await axios.get("http://localhost:5000/movies/" + [id]);
+    setSimilarMovie(data?.similar_movies?.results.slice(1, 20));
+    console.log(data);
     // console.log(status);
   };
 
@@ -194,28 +185,27 @@ function MovieDetailsCom() {
       </div>
       <p className="text-2xl text-white pl-2">More Movies Like This</p>
       <div className="flex w-[98vw] overflow-x-scroll no-scrollbar pb-12">
-        {similarMovie.map(
-          ({ id, poster_path, original_title, release_date }, key) => (
-            <div
-              key={id}
-              className="min-w-[160px] text-gray-400 text-center m-2"
-            >
-              <Link to={`/dashboard/moviedetails/` + id}>
-                <img
-                  src={
-                    poster_path
-                      ? `${IMAGE_PATH}${poster_path}`
-                      : `${NO_IMAGE_URL}`
-                  }
-                  alt={id}
-                  className="rounded w-full h-[250px] object-cover"
-                />
-                <p>{original_title}</p>
-                {/* <span>{release_date}</span> */}
-              </Link>
-            </div>
-          )
-        )}
+        {similarMovie.map(({ Index, poster_path, Title, Id }, key) => (
+          <div
+            key={Index}
+            className="min-w-[160px] text-gray-400 text-center m-2"
+          >
+            <Link to={`/dashboard/moviedetails/` + Id}>
+              <img
+                src={
+                  poster_path
+                    ? `${IMAGE_PATH}${poster_path}`
+                    : `${NO_IMAGE_URL}`
+                }
+                alt={Id}
+                className="rounded w-full h-[250px] object-cover"
+              />
+              <p>{Id}</p>
+              <p>{Title}</p>
+              {/* <span>{release_date}</span> */}
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );
