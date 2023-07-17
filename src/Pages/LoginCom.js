@@ -6,9 +6,11 @@ function LoginCom() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const loginFun = async () => {
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_API_URL}/api/user/checkuser`,
         {
@@ -19,7 +21,7 @@ function LoginCom() {
 
       data?.message === "login sucessfull"
         ? navigate("/dashboard/home")
-        : alert("login failed");
+        : alert(data?.message);
       console.log(data);
 
       const myobject = {
@@ -38,6 +40,8 @@ function LoginCom() {
       console.log(myobject);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -79,9 +83,10 @@ function LoginCom() {
           onClick={() => {
             loginFun();
           }}
-          className="w-full py-2 rounded justify-center bg-[#212b36] hover:bg-[#454f5b] text-white my-2"
+          disabled={loading}
+          className="w-full py-2 rounded justify-center bg-[#212b36] hover:bg-[#454f5b] text-white my-2 disabled:cursor-wait disabled:bg-[#454f5b]"
         >
-          Login
+          {loading ? "Loading..." : "Login"}
         </button>
 
         <p className="text-center p-4">

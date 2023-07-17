@@ -2,14 +2,13 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { IoNotifications } from "react-icons/io5";
 import PoppupComProfile from "./PoppupComProfile";
-//import { HiMenuAlt1 } from "react-icons/hi";
+
 function HeaderCom() {
   return (
     <>
       <nav className="fixed top-0 px-3.5 bg-gray-800 py-2 w-full z-20">
         <div className="flex items-center justify-between">
           <div className="flex items-center text-white space-x-2">
-            {/* <HiMenuAlt1 className="h-6 w-6 text-gray-400" /> */}
             <img src="/assets/logo.svg" alt="logo" className="w-10" />
             <img src="/assets/logo-text.svg" alt="logo_text" className="w-20" />
             {/* <p>code changed</p> */}

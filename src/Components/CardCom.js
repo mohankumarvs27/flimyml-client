@@ -9,8 +9,7 @@ function CardCom() {
   const IMAGE_PATH = "https://www.themoviedb.org/t/p/w440_and_h660_face";
 
   const API_ENV = process.env.REACT_APP_TMDB_MOVIE_API_KEY;
-  const NO_IMAGE_URL =
-    "https://res.cloudinary.com/dqot1ggrh/image/upload/v1680713819/No-Image-Placeholder_dpbwqq.png";
+  const NO_IMAGE_URL = "/assets/No-Image-Placeholder.png";
   // const API_URL = "https://api.themoviedb.org/3/movie/";
 
   //useState
