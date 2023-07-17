@@ -10,19 +10,19 @@ export default function MobileNavbar() {
       id: 1,
       icon: <AiFillHome className="group-hover:text-blue-500 h-6 w-6" />,
       title: "Home",
-      path: "/dashboard/home",
+      path: "/home/",
     },
     {
       id: 2,
       icon: <MdMovieFilter className="group-hover:text-blue-500 h-6 w-6" />,
       title: "Movies",
-      path: "/dashboard/movies",
+      path: "/home/movies",
     },
     {
       id: 3,
       icon: <HiTv className="group-hover:text-blue-500 h-6 w-6" />,
       title: "WebSeries",
-      path: "/dashboard/webseries",
+      path: "/home/webseries",
     },
   ];
   return (

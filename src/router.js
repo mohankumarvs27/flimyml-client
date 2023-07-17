@@ -18,8 +18,8 @@ function RouterCom() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<RegisterCom />} />
         <Route path="/login" element={<LoginCom />} />
-        <Route path="/dashboard" element={<Dashboard />}>
-          <Route path="home" element={<CardCom />} />
+        <Route path="/home" element={<Dashboard />}>
+          <Route path="" element={<CardCom />} />
           <Route path="moviedetails/:id" element={<MovieDetails />} />
           <Route path="seriesdetails/:id" element={<SeriesDetailsCom />} />
           <Route path="movies" element={<MoviesDataCom />} />
