@@ -9,10 +9,12 @@ function RegisterCom() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [selectedValue, setSelectedValue] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const registerFun = async () => {
     try {
+      setLoading(true);
       const { data } = await axios.post(
         `${process.env.REACT_APP_BACKEND_API_URL}/api/user/createuser`,
         {
@@ -27,10 +29,12 @@ function RegisterCom() {
 
       data?.message === "Sucessfully Created"
         ? navigate("/login")
-        : alert("Register failed");
+        : alert(data?.message);
       console.log(data);
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -173,13 +177,13 @@ function RegisterCom() {
               </label>
             </div>
             <button
-              className="w-full py-2 rounded justify-center bg-[#212b36] hover:bg-[#454f5b] text-white my-2"
+              className="w-full py-2 rounded justify-center bg-[#212b36] hover:bg-[#454f5b] text-white my-2 disabled:cursor-wait"
               onClick={() => {
                 registerFun();
                 // loginFormik()
               }}
             >
-              Register
+              {loading ? "Loading..." : "Register"}
             </button>
           </>
           <p className="text-center p-4">
