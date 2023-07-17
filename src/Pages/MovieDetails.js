@@ -189,7 +189,7 @@ function MovieDetailsCom() {
             key={Index}
             className="min-w-[160px] text-gray-400 text-center m-2"
           >
-            <Link to={`/dashboard/moviedetails/` + Id}>
+            <Link to={`/home/moviedetails/` + Id}>
               <img
                 src={
                   poster_path

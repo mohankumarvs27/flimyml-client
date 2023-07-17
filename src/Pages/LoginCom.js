@@ -20,7 +20,7 @@ function LoginCom() {
       );
 
       data?.message === "login sucessfull"
-        ? navigate("/dashboard/home")
+        ? navigate("/home/")
         : alert(data?.message);
       console.log(data);
 
