@@ -13,7 +13,7 @@ export default function PoppupComProfile() {
   return (
     <div className="top-5 right-5">
       <div className="relative inline-block">
-        <Link to="/dashboard/profile">
+        <Link to="/home/profile">
           <img
             className="h-10 w-10 rounded-full select-none"
             src={value[1] ? `${value[1]}` : `${PROFILE_PATH}`}
