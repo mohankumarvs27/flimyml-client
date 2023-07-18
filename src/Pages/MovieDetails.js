@@ -148,19 +148,17 @@ function MovieDetailsCom() {
                 <span>Like</span>
               </div>
               <div className="p-2 ml-2 rounded flex flex-col space-x-1 items-center hover:bg-gray-800">
-                <FaShare />
-                <>
-                  <RWebShare
-                    data={{
-                      text: movieDetails.original_title,
-                      url: currentPath,
-                      title: "Filmyml",
-                    }}
-                    onClick={() => console.log("shared successfully!")}
-                  >
-                    <button>Share</button>
-                  </RWebShare>
-                </>
+                <RWebShare>
+                  <FaShare />
+                  data=
+                  {{
+                    text: movieDetails.original_title,
+                    url: currentPath,
+                    title: "Filmyml",
+                  }}
+                  onClick={() => console.log("shared successfully!")}>
+                  <button>Share</button>
+                </RWebShare>
               </div>
               <div className="p-2 ml-2 rounded flex flex-col space-x-1 items-center hover:bg-gray-800">
                 <FaRegComment />
