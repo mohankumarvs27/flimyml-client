@@ -156,8 +156,10 @@ function MovieDetailsCom() {
                   }}
                   onClick={() => console.log("shared successfully!")}
                 >
-                  <FaShare />
-                  <button>Share</button>
+                  <button className="flex flex-col items-center">
+                    <FaShare />
+                    <p>Share</p>
+                  </button>
                 </RWebShare>
               </div>
               <div className="p-2 ml-2 rounded flex flex-col space-x-1 items-center hover:bg-gray-800">
