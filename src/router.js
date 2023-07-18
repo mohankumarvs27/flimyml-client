@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import RegisterCom from "./Pages/RegisterCom";
 import LoginCom from "./Pages/LoginCom";
 import Home from "./Pages/Home";
-import Dashboard from "./Pages/Dashboard";
+import Dashboard from "./Layout/Dashboard";
 import MovieDetails from "./Pages/MovieDetails";
 import CardCom from "./Components/CardCom";
 import MoviesDataCom from "./Components/MoviesDataCom";

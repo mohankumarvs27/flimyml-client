@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { HiLink } from "react-icons/hi";
 import { FaStar, FaShare, FaRegComment, FaRegHeart } from "react-icons/fa";
+import { RWebShare } from "react-web-share";
 // import ReactPlayer from "react-player";
 
 function MovieDetailsCom() {
@@ -11,6 +12,8 @@ function MovieDetailsCom() {
   const CAST_PATH = "https://www.themoviedb.org/t/p/w276_and_h350_face";
   // const POSTER_PATH =
   //   "https://www.themoviedb.org/t/p/w1000_and_h450_multi_faces";
+  const currentPath = window.location.href;
+  console.log(currentPath);
   const { id } = useParams();
 
   const API_ENV = process.env.REACT_APP_TMDB_MOVIE_API_KEY;
@@ -20,7 +23,7 @@ function MovieDetailsCom() {
   const [movieDetails, setMovieDetails] = React.useState([]);
   const [castDetails, setCastDetails] = React.useState([]);
   const [similarMovie, setSimilarMovie] = React.useState([]);
-  const [trailerUrl, setTrailerUrl] = React.useState(null);
+  // const [trailerUrl, setTrailerUrl] = React.useState(null);
   //apiDataFetching
   const getMovieDetails = async () => {
     try {
@@ -32,15 +35,15 @@ function MovieDetailsCom() {
         },
       });
 
-      const trailer = data.videos.results.find(
-        (video) => video.type === "Trailer"
-      );
-      if (trailer) {
-        const videoId = trailer.key;
-        const url = `https://www.youtube.com/watch?v=${videoId}`;
-        setTrailerUrl(url);
-        console.log(trailerUrl);
-      }
+      // const trailer = data.videos.results.find(
+      //   (video) => video.type === "Trailer"
+      // );
+      // if (trailer) {
+      //   const videoId = trailer.key;
+      //   const url = `https://www.youtube.com/watch?v=${videoId}`;
+      //   setTrailerUrl(url);
+      //   console.log(trailerUrl);
+      // }
 
       setMovieDetails(data);
     } catch (error) {
@@ -59,24 +62,28 @@ function MovieDetailsCom() {
       });
 
       setCastDetails(data?.cast.slice(0, 9));
-      console.log(data?.cast);
+      // console.log(data?.cast);
     } catch (error) {
       console.log(error);
     }
   };
 
   const similarGetMovie = async () => {
-    const { data } = await axios.get("http://localhost:5000/movies/" + [id]);
-    setSimilarMovie(data?.similar_movies?.results.slice(1, 20));
-    console.log(data);
+    const { data } = await axios.get(
+      "https://api.themoviedb.org/3/movie/" + [id] + "/recommendations",
+      {
+        params: {
+          api_key: API_ENV,
+          adult: "false",
+          region: "IN",
+        },
+      }
+    );
+    setSimilarMovie(data?.results);
+    // console.log(data);
     // console.log(status);
   };
 
-  // const formatVoteCount = (count) => {
-  //   const formatter = Intl.NumberFormat("en-US", { notation: "compact" });
-  //   return formatter.format(count);
-  // };
-  //console.log([movieDetails]);
   useEffect(() => {
     getMovieDetails();
     getCastDetails();
@@ -89,7 +96,7 @@ function MovieDetailsCom() {
       {/* <div className="p-2 flex items-center justify-center">
         {trailerUrl ? <ReactPlayer url={trailerUrl} controls="true" /> : null}
       </div> */}
-      <div className="w-full h-[calc(100vw * 0.5625)] pl-2">
+      <div className="w-full h-[calc(100vw * 0.5625)] pl-2 pt-2">
         {/* <img
           src={`${POSTER_PATH}${movieDetails.backdrop_path}`}
           alt="hi"
@@ -142,7 +149,18 @@ function MovieDetailsCom() {
               </div>
               <div className="p-2 ml-2 rounded flex flex-col space-x-1 items-center hover:bg-gray-800">
                 <FaShare />
-                <span>Share</span>
+                <>
+                  <RWebShare
+                    data={{
+                      text: movieDetails.original_title,
+                      url: currentPath,
+                      title: "Filmyml",
+                    }}
+                    onClick={() => console.log("shared successfully!")}
+                  >
+                    <button>Share</button>
+                  </RWebShare>
+                </>
               </div>
               <div className="p-2 ml-2 rounded flex flex-col space-x-1 items-center hover:bg-gray-800">
                 <FaRegComment />
@@ -168,8 +186,6 @@ function MovieDetailsCom() {
                   />
                   <p className="text-center text-black font-bold">{name}</p>
                   <p className="text-center text-black">{character}</p>
-
-                  {/* </Link> */}
                 </li>
               ))}
             </ul>
@@ -180,30 +196,28 @@ function MovieDetailsCom() {
             <HiLink />
           </Link>
         </div>
-        {console.log(movieDetails)}
+        {/* {console.log(similarMovie)} */}
       </div>
       <p className="text-2xl text-white pl-2">More Movies Like This</p>
       <div className="flex w-[98vw] overflow-x-scroll no-scrollbar pb-12">
-        {similarMovie.map(({ Index, poster_path, Title, Id }, key) => (
-          <div
-            key={Index}
-            className="min-w-[160px] text-gray-400 text-center m-2"
-          >
-            <Link to={`/home/moviedetails/` + Id}>
-              <img
-                src={
-                  poster_path
-                    ? `${IMAGE_PATH}${poster_path}`
-                    : `${NO_IMAGE_URL}`
-                }
-                alt={Id}
-                className="rounded w-full h-[250px] object-cover"
-              />
-              <p>{Id}</p>
-              <p>{Title}</p>
-              {/* <span>{release_date}</span> */}
-            </Link>
-          </div>
+        {similarMovie.map(({ poster_path, title, id }) => (
+          <React.Fragment key={id}>
+            <div className="min-w-[160px] text-gray-400 text-center m-2">
+              <Link to={`/home/moviedetails/` + id}>
+                <img
+                  src={
+                    poster_path
+                      ? `${IMAGE_PATH}${poster_path}`
+                      : `${NO_IMAGE_URL}`
+                  }
+                  alt={id}
+                  className="rounded w-full h-[250px] object-cover"
+                />
+                {/* <p>{id}</p> */}
+                <p>{title}</p>
+              </Link>
+            </div>
+          </React.Fragment>
         ))}
       </div>
     </div>

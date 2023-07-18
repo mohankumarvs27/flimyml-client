@@ -98,7 +98,7 @@ const RegisterCom = () => {
           {({ isSubmitting }) => (
             <Form>
               <div className="grid grid-rows-4 lg:grid-flow-col gap-2">
-                <div className="field w-[325px]">
+                <div className="field lg:w-[325px]">
                   <label htmlFor="userName">User Name</label>
                   <Field
                     name="userName"
