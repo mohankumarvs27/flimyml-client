@@ -16,7 +16,7 @@ https://filmyml.vercel.app/
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** React, TailwindCSS
 
 **Server:** Node, Express , Mysql ,Sequelize
 
